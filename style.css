@@ -1,0 +1,600 @@
+/* --------------------------------------------------------
+   FONT IMPORT
+-------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+/* --------------------------------------------------------
+   BODY STYLE
+-------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-bottom: 50px;
+}
+
+/* --------------------------------------------------------
+   HEADER
+-------------------------------------------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #f7f7f7;
+  border-bottom: 2px solid #cf2e2e;
+}
+.logo img {
+  width: 180px;
+  border: 3px solid #cf2e2e;
+  border-radius: 5px;
+  animation: pulseBorder 2s infinite;
+}
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 10px rgba(207, 46, 46, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(207, 46, 46, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(207, 46, 46, 0.6);
+  }
+}
+
+/* --------------------------------------------------------
+   NAVIGATION
+-------------------------------------------------------- */
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.4s ease-in-out;
+}
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 0%;
+  height: 1px;
+  background-color: #cf2e2e;
+  transition: width 0.4s ease-in-out;
+}
+.nav-item a:hover {
+  color: #cf2e2e;
+}
+.nav-item a:hover::after {
+  width: 100%;
+}
+.navigation ul li a.active {
+  color: #cf2e2e;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------
+   HEADINGS ANIMATION
+-------------------------------------------------------- */
+h1, h2 {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 1.5s ease-out forwards;
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --------------------------------------------------------
+   HOME PAGE LAYOUT
+-------------------------------------------------------- */
+.hs-content {
+  display: flex;
+  margin-top: 50px;
+}
+.hs-text {
+  margin-top: 70px;
+}
+.hs-text h1 {
+  color: #cf2e2e;
+  font-family: 'Montserrat', sans-serif;
+}
+.hs-text h2 {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+}
+.hs-image {
+  margin-left: 34%;
+}
+
+/* --------------------------------------------------------
+   BIOGRAPHY SECTION
+-------------------------------------------------------- */
+.biopg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+.biopg > h1 {
+  color: #cf2e2e;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+.bio-card {
+  flex: 1 1 300px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.07);
+}
+.bio-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+.bio-card h3 {
+  color: #cf2e2e;
+  margin-top: 0;
+}
+.bio-card p {
+  margin-bottom: 1em;
+}
+
+/* --------------------------------------------------------
+   VAARDIGHEDEN SECTIE
+-------------------------------------------------------- */
+.skills-section {
+  margin-top: 50px;
+  padding: 30px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+.skills-section h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #cf2e2e;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+.skill {
+  margin-bottom: 30px;
+}
+.skill h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #cf2e2e;
+  font-weight: 600;
+  margin-top: 25px;
+}
+.skill p {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 10px;
+  position: relative;
+}
+.progress-level {
+  background-color: transparent;
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+}
+.progress-fill {
+  background-color: #cf2e2e;
+  color: #fff;
+  text-align: right;
+  padding-right: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  height: 100%;
+  width: 0%;
+  animation: fillBar 3s forwards;
+  border-radius: 8px;
+}
+@keyframes fillBar {
+  to {
+    width: 100%;
+  }
+}
+
+/*******************************************************
+  CONTACT PAGE STYLES
+*******************************************************/
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  margin-top: 30px;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+.contact-section-content {
+  max-width: 600px;
+  text-align: center;
+}
+.contact-section-content h1 {
+  color: #cf2e2e;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.contact-section-content p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.contact-form-section {
+  margin-top: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 40px 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+.contact-form-section h2 {
+  text-align: center;
+  color: #cf2e2e;
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.btn-submit {
+  width: fit-content;
+  align-self: center;
+  background-color: #cf2e2e;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-submit:hover {
+  background-color: #a32d2d;
+}
+.contact-info-aside {
+  margin-top: 40px;
+  text-align: center;
+}
+.contact-info-aside h3 {
+  font-size: 24px;
+  color: #cf2e2e;
+  margin-bottom: 10px;
+}
+.contact-info-aside p {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* --------------------------------------------------------
+   FOOTER
+-------------------------------------------------------- */
+.footer {
+  background-color: #cf2e2e;
+  color: #fff;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-logo h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.footer-nav ul li {
+  display: inline-block;
+}
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+.footer-nav ul li a:hover {
+  color: #000;
+}
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------
+   HAMBURGER MENU
+-------------------------------------------------------- */
+
+
+#hamburger-toggle {
+  display: none;
+}
+
+.hamburger-icon {
+  display: none; 
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #cf2e2e;
+  transition: 0.3s;
+}
+
+/* --------------------------------------------------------
+RESPONSIVE MEDIA QUERRIES
+-------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+.logo img {
+  width: 140px;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+.navigation {
+  display: flex; 
+  gap: 10px;
+}
+.navigation ul li a {
+  font-size: 14px;
+}
+
+.hs-content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hs-image {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.bio-card {
+  flex: 1 1 100%;
+}
+
+.skills-section {
+  padding: 20px 15px;
+}
+
+.skill h3 {
+  font-size: 20px;
+}
+
+.contact-section {
+  margin-top: 20px;
+  padding: 20px 15px;
+}
+
+.contact-form-section {
+  margin-top: 30px;
+  padding: 20px 15px;
+}
+
+.contact-form-section h2 {
+  font-size: 24px;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 14px;
+}
+.btn-submit {
+  padding: 8px 16px;
+}
+
+.contact-info-aside h3 {
+  font-size: 20px;
+}
+
+.footer {
+  padding: 30px 0;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+}
+
+.footer-nav ul li a {
+  font-size: 14px;
+}
+}
+
+@media (max-width: 480px) {
+
+.wrapper {
+  width: 95%;
+}
+
+.hamburger-icon {
+  display: flex; 
+}
+
+.navigation {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0; 
+  right: 0;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f7f7f7;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  z-index: 999;
+}
+
+#hamburger-toggle:checked ~ .navigation {
+  display: flex;
+}
+
+.nav-item a {
+  font-size: 14px;
+}
+
+.hs-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hs-text h1 {
+  font-size: 24px;
+}
+.hs-text h2 {
+  font-size: 16px;
+}
+.hs-image {
+  margin-top: 20px;
+}
+
+.biopg > h1 {
+  font-size: 24px;
+}
+
+.bio-card {
+  padding: 15px;
+}
+
+.bio-card h3 {
+  font-size: 18px;
+}
+
+.skill h3 {
+  font-size: 18px;
+}
+.progress-fill {
+  font-size: 12px;
+}
+
+.contact-section-content h1 {
+  font-size: 28px;
+}
+
+.contact-section-content p {
+  font-size: 16px;
+}
+
+.contact-form-section h2 {
+  font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 14px;
+}
+
+.btn-submit {
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+.contact-info-aside h3 {
+  font-size: 18px;
+}
+
+.footer {
+  padding: 20px 0;
+}
+
+.footer-logo h2 {
+  font-size: 20px;
+}
+
+.footer-nav ul li a {
+  font-size: 12px;
+}
+
+.footer-bottom {
+  font-size: 12px;
+}
+}
